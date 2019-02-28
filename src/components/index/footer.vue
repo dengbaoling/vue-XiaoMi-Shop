@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="item" :class="{icon11: footerIndex === 0, icon1: footerIndex !== 0}" @click="footerEvent(0)">首页</div>
+       <div class="item" :class="{icon11: footerIndex === 0, icon1: footerIndex !== 0}" @click="footerEvent(0)">首页</div>
     <div class="item" :class="{icon22: footerIndex === 1, icon2: footerIndex !== 1}" @click="footerEvent(1)">分类</div>
     <div class="item" :class="{icon33: footerIndex === 2, icon3: footerIndex !== 2}" @click="footerEvent(2)">购物车</div>
     <div class="item" :class="{icon44: footerIndex === 3, icon4: footerIndex !== 3}" @click="footerEvent(3)">我</div>
@@ -16,6 +16,9 @@
     methods: {
       footerEvent (num) {
         this.footerIndex = num;
+         if (num === 0) {
+            this.$router.push({path: '/cart'});
+        }
       }
     }
   };
